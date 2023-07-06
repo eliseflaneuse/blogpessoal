@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.model.Tema;
 import com.generation.blogpessoal.repository.TemaRepository;
 
@@ -27,6 +28,13 @@ public class TemaController {
         return ResponseEntity.ok(temaRepository.findAll());
     }
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<Tema> getById(@PathVariable Long id){
+		return temaRepository.findById(id)
+				.map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	}	
+
 	@GetMapping("/descricao/{descricao}")
     public ResponseEntity<List<Tema>> getByTitle(@PathVariable 
     String descricao){
