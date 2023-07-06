@@ -53,4 +53,20 @@ Para iniciar o projeto Spring Boot, siga os passos abaixo:
 4. Importe o projeto ZIP no seu ambiente de desenvolvimento (por exemplo, STS, IntelliJ, etc.).
 5. Configure o banco de dados da aplicação de acordo com as necessidades do projeto.
 
+### Aprendizados 
+
+####Métodos da classe Optional e suas descrições:
+
+| Método                       | Descrição                                                                                                       |
+|------------------------------|----------------------------------------------------------------------------------------------------------------|
+| `of(T value)`                | Cria um `Optional` com um valor não nulo.                                                                       |
+| `ofNullable(T value)`        | Cria um `Optional` com um valor que pode ser nulo.                                                              |
+| `empty()`                    | Retorna um `Optional` vazio.                                                                                    |
+| `isPresent()`                | Verifica se um valor está presente no `Optional`.                                                              |
+| `get()`                      | Retorna o valor presente no `Optional`.                                                                         |
+| `orElse(T other)`            | Retorna o valor presente no `Optional`, ou um valor padrão fornecido como parâmetro.                             |
+| `orElseGet(Supplier other)`  | Retorna o valor presente no `Optional`, ou executa uma função para obter um valor alternativo.                   |
+| `orElseThrow(Exception)`     | Retorna o valor presente no `Optional`, ou lança uma exceção fornecida como parâmetro.                           |
+| `map(Function mapper)`       | Transforma o valor presente no `Optional` usando uma função fornecida e retorna um novo `Optional`.             |
+| `flatMap(Function mapper)`   | Similar ao `map`, mas a função fornecida retorna um `Optional`. Se o valor presente for vazio, retorna vazio.   |
 
